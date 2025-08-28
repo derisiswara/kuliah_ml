@@ -24,7 +24,7 @@ filters:
   - editable
 ---
 
-## A little about me
+## Kenalan dulu
 
 ::: columns
 ::: {.column width="45%"}
@@ -35,23 +35,24 @@ filters:
 
 :::
 
-::: {.column width="5%"}
+::: {.column width="55%"}
 
-:::
-
-::: {.column width="50%"}
-
-I take gigs as a research/data analyst. Experienced in survey design, creating dashboards, impact assessment, econometric modeling, and teaching.
-
-<br>
-
-  {{< fa solid briefcase size=xl >}} Adjunct Lecturer at **Perbanas Institute, Dept of Data Science**
+  {{< fa solid briefcase size=xl >}} Dosen di **Perbanas Institute, Dept. Sains Data**
 
   {{< fa link size=xl >}} [derisiswara.art](https://derisiswara.art/)
 
   {{< fa brands linkedin size=xl >}} [linkedin.com/in/derisiswara](https://www.linkedin.com/in/derisiswara/)
 
 {{< fa brands github size=xl >}} [github.com/derisiswara](https://github.com/derisiswara/)
+
+::: {.nonincremental}
+<br>
+**Riwayat Pendidikan**
+
+* S1 Ekonomi Syariah, IPB University (2020)
+* S2 Statistika dan Sains Data, IPB University (2024) 
+:::
+
 :::
 :::
 
