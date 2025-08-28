@@ -1,0 +1,372 @@
+---
+title: "Aplikasi Machine Learning"
+author: "Deri Siswara // 29 Agustus 2025<br><br>Mata Kuliah Perencaan Proyek Ekonomi<br>Departemen Ilmu Ekonomi FEM-IPB"
+execute: 
+  echo: true
+format:
+  revealjs:
+    chalkboard: 
+      buttons: true
+    footer: "[derisiswara.art/kuliah_ml](https://derisiswara.art/kuliah_ml/#/title-slide)"
+#    logo: "images/logoR.png"
+    width: 1600
+    height: 900
+    theme: slides.scss
+    highlight-style: a11y
+    transition: fade
+    incremental: false
+    slide-number: true
+    pdf-separate-fragments: true
+revealjs-plugins:
+  - pointer
+---
+
+## Deri Siswara
+
+::: columns
+::: {.column width="44%"}
+Adjunct Lecturer at [Perbanas Institute, <br>Dept of Data Science](https://fti.perbanas.id/home/)
+
+{{< fa link size=xl >}} [derisiswara.org](https://derisiswara.art/)
+
+{{< fa brands linkedin size=xl >}} [linkedin.com/in/derisiswara](https://www.linkedin.com/in/derisiswara/)
+
+{{< fa brands github size=xl >}} [derisiswara](https://github.com/derisiswara/)
+
+![](images/altp2.jpeg){style="border-radius:1em;margin-top:auto"}
+
+:::
+
+::: {.column width="28%"}
+![](images/Deri2.jpeg){style="border-radius:1em;margin-top:auto"}
+
+:::
+
+::: {.column width="28%"}
+::: {layout-nrow="2"}
+![](images/altp1.jpeg){style="border-radius:1em;margin-top:auto"}
+
+![](images/lombok.jpeg){style="border-radius:1em;margin-top:auto"}
+:::
+
+:::
+:::
+
+## Data Analysis Workflow
+
+Workflow umum pada analisis data secara umum dimulai dari import data, merapikan data, transformasi data, visualisasi data, pemodelan, hingga diakhiri dengan **komunikasi** hasil analisis data.
+
+![Sumber: https://r4ds.hadley.nz/](https://r4ds.hadley.nz/diagrams/data-science/whole-game.png)
+
+## Reproducibility
+
+::: {.nonincremental}
+
+- Riset yang baik adalah yang dapat direproduksi
+
+- Reporoduksi manual memakan waktu dan rentan terhadap kesalahan
+
+:::
+
+![](images/reproducibility.png){height=18em fig-alt="Reproducibility spectrum figure by Roger D. Peng (2011)"}
+
+## Manual updates ❌
+
+![](images/manual-update.svg){fig-alt="Illustration of a non-reproducible workflow for creating reports and presentations, highlighting the inefficiencies and error-prone nature of the copy/paste process." fig-align="center"}
+
+## Updates with Quarto ✅
+
+![](images/updates-with-quarto.svg){fig-alt="Illustration of a reproducible workflow for creating reports and presentations with R and Quarto, showcasing the streamlined and efficient process." fig-align="center"}
+
+# What is Quarto? {.section}
+
+## Publishing system that supports multiple languages & outputs
+
+*Open source tools*  for scientific and technical publishing. Pengembangan Quarto disponsori oleh **Posit**, di mana sebelumnya terdapat hal serupa yaitu R Markdown, yang memiliki tujuan yang sama, tetapi ditargetkan khusus bahasa R.
+
+![Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio::Conf(2022). Illustrated by Allison Horst.](images/horst-quarto-schematic.png){fig-align="center" style="margin-top:-1em;margin-bottom:-1em"}
+
+## R Markdown vs Quarto
+
+::: columns
+::: {.column width="50%" .nonincremental}
+![](images/rmarkdown.png){width="150"}
+
+### R Markdown
+
+-   Sistem penerbitan untuk ekosistem R 
+
+-   Bergantung pada R
+:::
+
+::: {.column width="50%" .nonincremental}
+![](images/quarto.png){width="150"}
+
+### Quarto
+
+-   Command Line Interface (CLI)
+
+-   Memperluas ekosistem R Markdown
+
+-   Multi-bahasa dan multi-mesin
+
+:::
+:::
+
+<br>
+
+R Markdown akan tetap dipertahankan tetapi kemungkinan tidak ada fitur baru [(Xie 2022)](https://yihui.org/en/2022/04/quarto-r-markdown/).
+
+## Create all kinds of outputs
+
+::: {.nonincremental}
+
+-   [Articles & **reports**](https://quarto.org/docs/output-formats/all-formats.html)
+-   [Manuscripts](https://quarto.org/docs/manuscripts/)
+-   [**Presentations**](https://quarto.org/docs/presentations/)
+-   [Dashboards](https://quarto.org/docs/dashboards/)
+-   [Websites](https://quarto.org/docs/websites/)
+-   [Books](https://quarto.org/docs/books/)
+-   [Interactive docs](https://quarto.org/docs/interactive/)
+
+Get inspired by the [Quarto.org gallery](https://quarto.org/docs/gallery/){preview-link="true"} and the [Qmd Club website & blog showcase](https://qmdclub.com/){preview-link="true"}
+
+:::
+
+# Anatomy of a `.qmd` file {.section}
+
+## 1. YAML header
+
+"Yet Another Markup Language" atau "YAML"
+
+``` {.yaml}
+---                           # <1>
+title: Quarto demo            # <2>
+author: Deri Siswara            # <2>
+date: 2025-05-11              # <2>
+format:                       # <2>
+  html:                       # <3>
+    theme: flatly             # <3>
+    toc: true                 # <3>
+---                           # <1>
+```
+::: {.nonincremental}
+1. Ditandai dengan tiga garis (`---`) di bagian atas dan bawah
+
+2. Metadata dokumen dan opsi tingkat dokumen menggunakan pasangan kunci-nilai dalam format `key: value`
+
+3. Tambahkan 2 spasi untuk setiap tingkat indentasi -- YAML sangat sensitif!
+:::
+
+\
+
+See available options in the **reference guides**: [HTML](https://quarto.org/docs/reference/formats/html.html), [PDF](https://quarto.org/docs/reference/formats/pdf.html), [MS Word](https://quarto.org/docs/reference/formats/docx.html), [Revealjs](https://quarto.org/docs/reference/formats/presentations/revealjs.html), [MS Powerpoint](https://quarto.org/docs/reference/formats/presentations/pptx.html).
+
+## 2. Narrative
+
+Markdown syntax:
+
+::: {.nonincremental}
+-   Teks dengan format: `**tebal**` &rarr; **tebal**
+
+-   Judul bagian: `# Judul 1`, `# Judul 2`
+
+-   Hyperlink: `[google.com](https://google.com)` &rarr; [google.com](https://google.com)
+
+-   Gambar: `![](image.png)`
+
+-   Kode inline: ``` `{{r}} Sys.Date()` ``` &rarr; ```r Sys.Date()```
+
+-   Matematika inline: ``` `$E = mc^{2}$` ``` &rarr; $E = mc^{2}$
+
+:::
+
+[**Guide to markdown syntax**](https://quarto.org/docs/authoring/markdown-basics.html){preview-link="true"}
+
+## 3. Code chunks (or cells or blocks)
+
+**Tiga cara untuk menyisipkan code chunk:**
+
+::: {.nonincremental}
+
+1.    Pintasan keyboard `Cmd`/`Ctrl` + `Option`/`Alt` + `I`.
+
+2.    ![](images/rstudio-insert-chunk.png){fig-alt="Tombol Insert Chunk di RStudio" style="vertical-align:middle;" width="49"} Tombol **Insert Chunk** di toolbar editor.
+
+3.    Ketik manual pembatas chunk ```` ```{r} ```` dan ```` ``` ````.
+
+:::
+
+**Dua cara untuk menjalankan code chunk:**
+
+::: {.nonincremental}
+1.    Gunakan tombol **Run Current Chunk** atau **Run All Chunks Above**.
+
+  ![](images/rstudio-code-chunk.png){fig-alt="Code chunk di RStudio dengan tombol Run All Chunks Above dan Run Current Chunk disorot dan diberi label."}
+
+2.    Jalankan code chunk saat ini dengan `Cmd`/`Ctrl` + `Shift` + `Enter`.
+:::
+
+# Demo {.demo}
+
+[`0-html-demo.qmd` ](https://github.com/derisiswara/belajarR-quarto/blob/main/demos/0-html-demo.qmd)
+
+
+## Three ways to render
+
+1. **RStudio/Quarto integration**:
+
+    ![](https://quarto.org/docs/get-started/hello/images/rstudio-render-button.png){fig-alt="Quarto render button in RStudio" style="vertical-align:middle;" width="49"} **Render** button in RStudio or `Cmd`/`Ctrl` + `Shift` + `K` keyboard shortcut
+
+2. ✨ **Quarto R package** ✨
+
+    ```{.r filename="Console or R script"}
+    quarto::quarto_render(
+      input = here::here("latihan.qmd"),   # Input Quarto file
+    ```
+
+3. **Quarto CLI**
+
+    ```{.bash filename="Terminal"}
+    quarto render latihan.qmd
+    ```
+
+
+# Styling with HTML and CSS {.section}
+
+## HTML format uses Bootswatch themes
+
+Pilih atau sesuaikan salah satu dari 25 tema [Bootswatch](https://bootswatch.com/){preview-link="true"}.
+
+\
+
+
+**Atur tema** di YAML di bawah kunci `html`:
+
+``` yaml
+format:
+  html:
+    theme: solar
+```
+
+\
+
+**Sesuaikan tema** dengan menyertakan file `.scss` kustom di bawah kunci `theme`:
+
+``` yaml
+format:
+  html:
+    theme: [solar, theme.scss]
+```
+
+\
+
+[HTML theming Quarto docs](https://quarto.org/docs/output-formats/html-themes.html)
+
+## Revealjs has its own themes
+
+Pratinjau tema di [revealjs.com/themes](https://revealjs.com/themes/){preview-link="true"}.
+
+\
+
+**Atur tema** di YAML di bawah kunci `revealjs`:
+
+``` yaml
+format:
+  revealjs:
+    theme: moon
+```
+
+\
+
+
+**Sesuaikan tema** dengan menyertakan file `.scss` kustom di bawah kunci `theme`:
+
+``` yaml
+format:
+  revealjs:
+    theme: [moon, theme.scss]
+```
+
+\
+
+[Revealjs theming Quarto docs](https://quarto.org/docs/presentations/revealjs/themes.html)
+
+## SCSS files
+
+File SCSS memiliki bentuk sebagai berikut:
+
+``` scss
+/*-- scss:defaults --*/
+$h2-font-size:          1.6rem !default;
+$headings-font-weight:  500 !default;
+$body-color:            $gray-700 !default;
+
+/*-- scss:rules --*/
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, .3);
+}
+```
+
+\
+
+Definisikan [**variabel SASS**](https://quarto.org/docs/output-formats/html-themes.html#sass-variables) di bagian `defaults`.
+
+Deklarasikan [**aturan CSS**](https://www.w3schools.com/css/css_syntax.ASP) di bagian `rules`.
+
+\
+
+[Bootstrap docs](https://getbootstrap.com/docs/5.1/customize/sass/)
+
+[Default Bootstrap variables](https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss)
+
+[Emil Hvitfeldt's Slidecraft 101 Series](https://emilhvitfeldt.com/blog)
+
+# Demo Slides (Presentation) with Framework Revealjs {.demo}
+
+This presentation is created using Quarto with the Revealjs framework.
+[github.com/derisiswara/belajarR-quarto](https://github.com/derisiswara/belajarR-quarto)
+
+# Demo Website {.demo}
+
+[Komunitas belajaR](https://derisiswara.quarto.pub/komunitas-belajar-r/)
+
+[Personal Web](https://derisiswara.org)
+
+[Workshop Site](https://derisiswara.quarto.pub/workshop-r/)
+
+# Demo Dashboard {.demo}
+
+[github.com/derisiswara/dashboard-quarto-omnitest](https://github.com/derisiswara/dashboard-quarto-omnitest)
+
+[Dashboard Site](https://01969522-1355-9b04-c2da-46e09a474dcd.share.connect.posit.cloud/)
+
+## Thank you!
+
+::: columns
+::: {.column width="50%"}
+**Slides**:
+
+[derisiswara.quarto.pub/dasar-quarto/](https://derisiswara.quarto.pub/dasar-quarto/)
+
+**Source code**:
+
+[github.com/derisiswara/belajarR-quarto](https://github.com/derisiswara/belajarR-quarto)
+
+:::
+
+::: {.column width="50%"}
+**Let's connect!**
+
+{{< fa link size=xl >}} [derisiswara.org](https://derisiswara.org/)
+
+{{< fa brands linkedin size=xl >}} [linkedin.com/in/derisiswara](https://www.linkedin.com/in/derisiswara/)
+
+{{< fa brands github size=xl >}} [derisiswara](https://github.com/derisiswara/)
+:::
+:::
+
+## References
+
+- Grolemund, G., & Wickham, H. (2017). R for Data Science. O’Reilly Media.
+- Most of the content in this presentation is adapted from [jadeyryan](https://jadeyryan.com/)

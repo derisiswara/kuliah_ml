@@ -1,370 +1,205 @@
 ---
-title: "Dasar-Dasar Pemanfaatan Quarto R<br>![](images/logo-quarto.png){width=3em}"
-author: "Deri Siswara // Mei 11, 2025<br>Komunitas belajaR"
+title: "Aplikasi Machine Learning"
+author: "Deri Siswara // 29 Agustus 2025<br><br>Mata Kuliah Perencaan Proyek Ekonomi<br>Departemen Ilmu Ekonomi FEM-IPB"
 execute: 
   echo: true
 format:
   revealjs:
-    footer: "[derisiswara.org](https://derisiswara.org/)"
-    logo: "images/logoR.png"
+    chalkboard: 
+      buttons: true
+    footer: "[derisiswara.art/kuliah_ml](https://derisiswara.art/kuliah_ml/#/title-slide)"
+#    logo: "images/logoR.png"
     width: 1600
     height: 900
     theme: slides.scss
     highlight-style: a11y
     transition: fade
-    incremental: false
+    incremental: true
     slide-number: true
     pdf-separate-fragments: true
 revealjs-plugins:
   - pointer
+  - editable
+filters:
+  - editable
 ---
 
-## Deri Siswara
+## A little about me
 
 ::: columns
-::: {.column width="44%"}
-Adjunct Lecturer at [Perbanas Institute, <br>Dept of Data Science](https://fti.perbanas.id/home/)
+::: {.column width="45%"}
 
-{{< fa link size=xl >}} [derisiswara.org](https://derisiswara.org/)
+![](images/deri.png){width=800px style="border-radius:1em;margin-top:auto"}
 
-{{< fa brands linkedin size=xl >}} [linkedin.com/in/derisiswara](https://www.linkedin.com/in/derisiswara/)
-
-{{< fa brands github size=xl >}} [derisiswara](https://github.com/derisiswara/)
-
-![](images/altp2.jpeg){style="border-radius:1em;margin-top:auto"}
+### Deri Siswara
 
 :::
 
-::: {.column width="28%"}
-![](images/Deri2.jpeg){style="border-radius:1em;margin-top:auto"}
+::: {.column width="5%"}
 
 :::
 
-::: {.column width="28%"}
-::: {layout-nrow="2"}
-![](images/altp1.jpeg){style="border-radius:1em;margin-top:auto"}
+::: {.column width="50%"}
 
-![](images/lombok.jpeg){style="border-radius:1em;margin-top:auto"}
-:::
-
-:::
-:::
-
-## Data Analysis Workflow
-
-Workflow umum pada analisis data secara umum dimulai dari import data, merapikan data, transformasi data, visualisasi data, pemodelan, hingga diakhiri dengan **komunikasi** hasil analisis data.
-
-![Sumber: https://r4ds.hadley.nz/](https://r4ds.hadley.nz/diagrams/data-science/whole-game.png)
-
-## Reproducibility
-
-::: {.nonincremental}
-
-- Riset yang baik adalah yang dapat direproduksi
-
-- Reporoduksi manual memakan waktu dan rentan terhadap kesalahan
-
-:::
-
-![](images/reproducibility.png){height=18em fig-alt="Reproducibility spectrum figure by Roger D. Peng (2011)"}
-
-## Manual updates ❌
-
-![](images/manual-update.svg){fig-alt="Illustration of a non-reproducible workflow for creating reports and presentations, highlighting the inefficiencies and error-prone nature of the copy/paste process." fig-align="center"}
-
-## Updates with Quarto ✅
-
-![](images/updates-with-quarto.svg){fig-alt="Illustration of a reproducible workflow for creating reports and presentations with R and Quarto, showcasing the streamlined and efficient process." fig-align="center"}
-
-# What is Quarto? {.section}
-
-## Publishing system that supports multiple languages & outputs
-
-*Open source tools*  for scientific and technical publishing. Pengembangan Quarto disponsori oleh **Posit**, di mana sebelumnya terdapat hal serupa yaitu R Markdown, yang memiliki tujuan yang sama, tetapi ditargetkan khusus bahasa R.
-
-![Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio::Conf(2022). Illustrated by Allison Horst.](images/horst-quarto-schematic.png){fig-align="center" style="margin-top:-1em;margin-bottom:-1em"}
-
-## R Markdown vs Quarto
-
-::: columns
-::: {.column width="50%" .nonincremental}
-![](images/rmarkdown.png){width="150"}
-
-### R Markdown
-
--   Sistem penerbitan untuk ekosistem R 
-
--   Bergantung pada R
-:::
-
-::: {.column width="50%" .nonincremental}
-![](images/quarto.png){width="150"}
-
-### Quarto
-
--   Command Line Interface (CLI)
-
--   Memperluas ekosistem R Markdown
-
--   Multi-bahasa dan multi-mesin
-
-:::
-:::
+I take gigs as a research/data analyst. Experienced in survey design, creating dashboards, impact assessment, econometric modeling, and teaching.
 
 <br>
 
-R Markdown akan tetap dipertahankan tetapi kemungkinan tidak ada fitur baru [(Xie 2022)](https://yihui.org/en/2022/04/quarto-r-markdown/).
+  {{< fa solid briefcase size=xl >}} Adjunct Lecturer at **Perbanas Institute, Dept of Data Science**
 
-## Create all kinds of outputs
+  {{< fa link size=xl >}} [derisiswara.art](https://derisiswara.art/)
 
-::: {.nonincremental}
+  {{< fa brands linkedin size=xl >}} [linkedin.com/in/derisiswara](https://www.linkedin.com/in/derisiswara/)
 
--   [Articles & **reports**](https://quarto.org/docs/output-formats/all-formats.html)
--   [Manuscripts](https://quarto.org/docs/manuscripts/)
--   [**Presentations**](https://quarto.org/docs/presentations/)
--   [Dashboards](https://quarto.org/docs/dashboards/)
--   [Websites](https://quarto.org/docs/websites/)
--   [Books](https://quarto.org/docs/books/)
--   [Interactive docs](https://quarto.org/docs/interactive/)
-
-Get inspired by the [Quarto.org gallery](https://quarto.org/docs/gallery/){preview-link="true"} and the [Qmd Club website & blog showcase](https://qmdclub.com/){preview-link="true"}
-
+{{< fa brands github size=xl >}} [github.com/derisiswara](https://github.com/derisiswara/)
+:::
 :::
 
-# Anatomy of a `.qmd` file {.section}
+# Apa itu *Machine Learning*? {.demo}
 
-## 1. YAML header
-
-"Yet Another Markup Language" atau "YAML"
-
-``` {.yaml}
----                           # <1>
-title: Quarto demo            # <2>
-author: Deri Siswara            # <2>
-date: 2025-05-11              # <2>
-format:                       # <2>
-  html:                       # <3>
-    theme: flatly             # <3>
-    toc: true                 # <3>
----                           # <1>
-```
-::: {.nonincremental}
-1. Ditandai dengan tiga garis (`---`) di bagian atas dan bawah
-
-2. Metadata dokumen dan opsi tingkat dokumen menggunakan pasangan kunci-nilai dalam format `key: value`
-
-3. Tambahkan 2 spasi untuk setiap tingkat indentasi -- YAML sangat sensitif!
+##
+::: columns
+::: {.column width="25%"}
+![](images/s1.jpeg)
+:::
+::: {.column width="25%"}
+![](images/s2.jpeg)
+:::
+::: {.column width="25%"}
+![](images/s3.jpeg)
+:::
+::: {.column width="25%"}
+![](images/s4.jpeg)
+:::
 :::
 
-\
+# Apalagi contoh produk *machine learning* yang sering kita gunakan sehari-hari? 
 
-See available options in the **reference guides**: [HTML](https://quarto.org/docs/reference/formats/html.html), [PDF](https://quarto.org/docs/reference/formats/pdf.html), [MS Word](https://quarto.org/docs/reference/formats/docx.html), [Revealjs](https://quarto.org/docs/reference/formats/presentations/revealjs.html), [MS Powerpoint](https://quarto.org/docs/reference/formats/presentations/pptx.html).
-
-## 2. Narrative
-
-Markdown syntax:
+## Produk Machine Learning Sehari-hari
 
 ::: {.nonincremental}
--   Teks dengan format: `**tebal**` &rarr; **tebal**
+* **📱 Smartphone**: face unlock, autocorrect, email spam filter
+* **🌐 Sosial Media**: feed rekomendasi, teman disarankan, trending topic
+* **🛒 E-commerce & Finansial**: rekomendasi produk, harga dinamis, deteksi fraud, chatbot
+* **🚗 Transportasi**: Google Maps ETA (Estimated Time of Arrival), driver matching, mobil autopilot
+* **🎵 Hiburan & Produktivitas**: Netflix/Spotify, Google Translate, Grammarly
+:::
+# Jadi apa definisi *Machine Learning*? {.demo}
 
--   Judul bagian: `# Judul 1`, `# Judul 2`
+## Definisi Machine Learning
 
--   Hyperlink: `[google.com](https://google.com)` &rarr; [google.com](https://google.com)
+![](https://i.vas3k.ru/7vw.jpg)
 
--   Gambar: `![](image.png)`
+*Machine Learning* adalah cabang dari kecerdasan buatan (AI) yang berfokus pada pengembangan algoritma dan model statistik yang memungkinkan komputer untuk belajar dari data dan membuat prediksi atau keputusan tanpa perlu diprogram secara eksplisit.
 
--   Kode inline: ``` `{{r}} Sys.Date()` ``` &rarr; ```r Sys.Date()```
+## Klasifikasi
 
--   Matematika inline: ``` `$E = mc^{2}$` ``` &rarr; $E = mc^{2}$
+![](images/def3.png)
 
+## Traditional Programming
+
+![](images/def2.png)
+
+## Machine Learning (ML)
+
+![](images/def1.png)
+
+## 
+
+![](https://info5940.infosci.cornell.edu/slides/machine-learning/images/intro.003.jpeg)
+
+## Machine Learning di Data Science
+
+![](https://miro.medium.com/v2/format:webp/1*mgXvzNcwfpnBawI6XTkVRg.png){.center}
+
+## Machine Learning Workflow {.smaller}
+![](https://ml-ops.org/img/ml-engineering.jpg)
+
+# Why is ML important? {.demo}
+
+# Machine Learning itu Penting karena...
+
+::: {.incremental}
+* Ide tugas akhir (a.k.a. skripsi)
 :::
 
-[**Guide to markdown syntax**](https://quarto.org/docs/authoring/markdown-basics.html){preview-link="true"}
+## Scope ML di Universitas
+####  Predictive vs Explanatory
 
-## 3. Code chunks (or cells or blocks)
+![](images/fake.png)
 
-**Tiga cara untuk menyisipkan code chunk:**
+## Scope ML di Universitas
+####  Predictive vs Explanatory
+![](images/pred.png){width=1000px}
+[Baca](https://repository.ipb.ac.id/handle/123456789/158240)
+![](images/exp.png){width=1000px}
+[Baca](https://repository.ipb.ac.id/handle/123456789/111961)
 
-::: {.nonincremental}
+# Olah Data dengan Metode *Machine Learning* {.demo}
 
-1.    Pintasan keyboard `Cmd`/`Ctrl` + `Option`/`Alt` + `I`.
-
-2.    ![](images/rstudio-insert-chunk.png){fig-alt="Tombol Insert Chunk di RStudio" style="vertical-align:middle;" width="49"} Tombol **Insert Chunk** di toolbar editor.
-
-3.    Ketik manual pembatas chunk ```` ```{r} ```` dan ```` ``` ````.
-
-:::
-
-**Dua cara untuk menjalankan code chunk:**
-
-::: {.nonincremental}
-1.    Gunakan tombol **Run Current Chunk** atau **Run All Chunks Above**.
-
-  ![](images/rstudio-code-chunk.png){fig-alt="Code chunk di RStudio dengan tombol Run All Chunks Above dan Run Current Chunk disorot dan diberi label."}
-
-2.    Jalankan code chunk saat ini dengan `Cmd`/`Ctrl` + `Shift` + `Enter`.
-:::
-
-# Demo {.demo}
-
-[`0-html-demo.qmd` ](https://github.com/derisiswara/belajarR-quarto/blob/main/demos/0-html-demo.qmd)
-
-
-## Three ways to render
-
-1. **RStudio/Quarto integration**:
-
-    ![](https://quarto.org/docs/get-started/hello/images/rstudio-render-button.png){fig-alt="Quarto render button in RStudio" style="vertical-align:middle;" width="49"} **Render** button in RStudio or `Cmd`/`Ctrl` + `Shift` + `K` keyboard shortcut
-
-2. ✨ **Quarto R package** ✨
-
-    ```{.r filename="Console or R script"}
-    quarto::quarto_render(
-      input = here::here("latihan.qmd"),   # Input Quarto file
-    ```
-
-3. **Quarto CLI**
-
-    ```{.bash filename="Terminal"}
-    quarto render latihan.qmd
-    ```
-
-
-# Styling with HTML and CSS {.section}
-
-## HTML format uses Bootswatch themes
-
-Pilih atau sesuaikan salah satu dari 25 tema [Bootswatch](https://bootswatch.com/){preview-link="true"}.
-
-\
-
-
-**Atur tema** di YAML di bawah kunci `html`:
-
-``` yaml
-format:
-  html:
-    theme: solar
-```
-
-\
-
-**Sesuaikan tema** dengan menyertakan file `.scss` kustom di bawah kunci `theme`:
-
-``` yaml
-format:
-  html:
-    theme: [solar, theme.scss]
-```
-
-\
-
-[HTML theming Quarto docs](https://quarto.org/docs/output-formats/html-themes.html)
-
-## Revealjs has its own themes
-
-Pratinjau tema di [revealjs.com/themes](https://revealjs.com/themes/){preview-link="true"}.
-
-\
-
-**Atur tema** di YAML di bawah kunci `revealjs`:
-
-``` yaml
-format:
-  revealjs:
-    theme: moon
-```
-
-\
-
-
-**Sesuaikan tema** dengan menyertakan file `.scss` kustom di bawah kunci `theme`:
-
-``` yaml
-format:
-  revealjs:
-    theme: [moon, theme.scss]
-```
-
-\
-
-[Revealjs theming Quarto docs](https://quarto.org/docs/presentations/revealjs/themes.html)
-
-## SCSS files
-
-File SCSS memiliki bentuk sebagai berikut:
-
-``` scss
-/*-- scss:defaults --*/
-$h2-font-size:          1.6rem !default;
-$headings-font-weight:  500 !default;
-$body-color:            $gray-700 !default;
-
-/*-- scss:rules --*/
-h1, h2, h3, h4, h5, h6 {
-  text-shadow: -1px -1px 0 rgba(0, 0, 0, .3);
-}
-```
-
-\
-
-Definisikan [**variabel SASS**](https://quarto.org/docs/output-formats/html-themes.html#sass-variables) di bagian `defaults`.
-
-Deklarasikan [**aturan CSS**](https://www.w3schools.com/css/css_syntax.ASP) di bagian `rules`.
-
-\
-
-[Bootstrap docs](https://getbootstrap.com/docs/5.1/customize/sass/)
-
-[Default Bootstrap variables](https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss)
-
-[Emil Hvitfeldt's Slidecraft 101 Series](https://emilhvitfeldt.com/blog)
-
-# Demo Slides (Presentation) with Framework Revealjs {.demo}
-
-This presentation is created using Quarto with the Revealjs framework.
-[github.com/derisiswara/belajarR-quarto](https://github.com/derisiswara/belajarR-quarto)
-
-# Demo Website {.demo}
-
-[Komunitas belajaR](https://derisiswara.quarto.pub/komunitas-belajar-r/)
-
-[Personal Web](https://derisiswara.org)
-
-[Workshop Site](https://derisiswara.quarto.pub/workshop-r/)
-
-# Demo Dashboard {.demo}
-
-[github.com/derisiswara/dashboard-quarto-omnitest](https://github.com/derisiswara/dashboard-quarto-omnitest)
-
-[Dashboard Site](https://01969522-1355-9b04-c2da-46e09a474dcd.share.connect.posit.cloud/)
-
-## Thank you!
+## R, Python, STATA, dll
 
 ::: columns
-::: {.column width="50%"}
-**Slides**:
+::: {.column width="45%"}
 
-[derisiswara.quarto.pub/dasar-quarto/](https://derisiswara.quarto.pub/dasar-quarto/)
-
-**Source code**:
-
-[github.com/derisiswara/belajarR-quarto](https://github.com/derisiswara/belajarR-quarto)
-
+![](images/software.jpeg)
 :::
 
-::: {.column width="50%"}
-**Let's connect!**
+::: {.column width="45%"}
+::: {.nonincremental}
+* [Machine Learning dengan R dan Python](https://derisiswara.art/simpleml/)
+<br>
+<br>
+* [Machine Learning dengan STATA](https://derisiswara.art/blog/2025_08_08_stata_h2o/)
+:::
+:::
+:::
+## Powering a Dashboard with LLMs
 
-{{< fa link size=xl >}} [derisiswara.org](https://derisiswara.org/)
+{{< video https://youtu.be/xbS8nNZYB5A  width="100%" height="80%" >}}
 
-{{< fa brands linkedin size=xl >}} [linkedin.com/in/derisiswara](https://www.linkedin.com/in/derisiswara/)
+# Kenapa terkadang regresi/ekonometrika tidak cukup? {.demo}
 
-{{< fa brands github size=xl >}} [derisiswara](https://github.com/derisiswara/)
+## Non-Linieritas dan Besar Data
+::: columns
+::: {.column width="45%"}
+![](https://bradleyboehmke.github.io/HOML/06b-mars_files/figure-html/nonlinear-comparisons-1.png)
+:::
+::: {.column width="45%"}
+![](https://derisiswara.quarto.pub/ml_w1/img/c6.png)
 :::
 :::
 
-## References
+Interpretasi dalam model regresi mengharuskan asumsi linearitas, yang mungkin tidak selalu sesuai dengan hubungan kompleks dalam data dunia nyata. Model non-linier berbasis ML, misalnya decision tree dapat menjadi alternatif yang lebih baik. Juga, semakin besar data atau semakin kompleks hubungan antar variabel, performa model ML cenderung lebih unggul dibandingkan regresi tradisional.
 
-- Grolemund, G., & Wickham, H. (2017). R for Data Science. O’Reilly Media.
-- Most of the content in this presentation is adapted from [jadeyryan](https://jadeyryan.com/)
+# Mari Bermain ! {.demo}
+
+[Coba Buka](https://teachablemachine.withgoogle.com/models/S4HbsLYJr/)
+
+[Buat Model ML Yuk](https://teachablemachine.withgoogle.com/train/)
+
+## Submit Tugas
+::: columns
+::: {.column width="45%"}
+::: {.nonincremental}
+
+* 1. Buat model ML versimu sendiri di [teachablemachine.withgoogle.com/train](https://teachablemachine.withgoogle.com/train/) dan submit!
+
+* 2. Cari model Terbaik! [Kerjakan](https://colab.research.google.com/drive/1YpV2srdBqaaSG31dRtHLKxH_ebdzFwf9?usp=sharing)
+
+  * Save as notebook di Google Drive kamu
+  * Run semua cell
+  * Cari predictor yang menghasilkan akurasi terbaik
+  * Submit link notebook kamu
+
+:::
+:::
+::: {.column width="10%"}
+:::
+::: {.column width="45%"}
+<iframe aria-label='Submit Tugas ML' frameborder="0" style="height:500px;width:99%;border:none;" src='https://forms.zohopublic.com/derisiswara/form/SubmitTugasML/formperma/6uan1KT-IaZPK-k6jqpncLVaYxSM6-3fH0uVbMr6Ekk'></iframe>
+:::
+:::
+
+# Terima Kasih
+[Slides and materials for the Machine Learning course](https://derisiswara.art/machinelearning-perbanas/)

@@ -11,8 +11,8 @@
 <link href="index_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <meta name="author" content="Deri Siswara // Mei 11, 2025 Komunitas belajaR">
-  <title>Dasar-Dasar Pemanfaatan Quarto R </title>
+  <meta name="author" content="Deri Siswara // 29 Agustus 2025 Mata Kuliah Perencaan Proyek Ekonomi Departemen Ilmu Ekonomi FEM-IPB">
+  <title>Aplikasi Machine Learning</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,77 +30,13 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #767676;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #767676;  padding-left: 4px; }
-    div.sourceCode
-      { color: #545454; background-color: #fefefe; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #545454; } /* Normal */
-    code span.al { color: #7928a1; } /* Alert */
-    code span.an { color: #696969; } /* Annotation */
-    code span.at { color: #a55a00; } /* Attribute */
-    code span.bn { color: #7928a1; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #d91e18; } /* ControlFlow */
-    code span.ch { color: #008000; } /* Char */
-    code span.cn { color: #d91e18; } /* Constant */
-    code span.co { color: #696969; } /* Comment */
-    code span.cv { color: #696969; font-style: italic; } /* CommentVar */
-    code span.do { color: #696969; font-style: italic; } /* Documentation */
-    code span.dt { color: #7928a1; } /* DataType */
-    code span.dv { color: #7928a1; } /* DecVal */
-    code span.er { color: #7928a1; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #a55a00; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #696969; } /* Information */
-    code span.kw { color: #d91e18; } /* Keyword */
-    code span.op { color: #00769e; } /* Operator */
-    code span.ot { color: #d91e18; } /* Other */
-    code span.pp { color: #7928a1; } /* Preprocessor */
-    code span.sc { color: #00769e; } /* SpecialChar */
-    code span.ss { color: #008000; } /* SpecialString */
-    code span.st { color: #008000; } /* String */
-    code span.va { color: #a55a00; } /* Variable */
-    code span.vs { color: #008000; } /* VerbatimString */
-    code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-543f7dcb107ef2ebe091032da95eeffa.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
@@ -196,303 +132,201 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Dasar-Dasar Pemanfaatan Quarto R<br><img data-src="images/logo-quarto.png" style="width:3em"></h1>
+  <h1 class="title">Aplikasi Machine Learning</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Deri Siswara // Mei 11, 2025<br>Komunitas belajaR 
+Deri Siswara // 29 Agustus 2025<br><br>Mata Kuliah Perencaan Proyek Ekonomi<br>Departemen Ilmu Ekonomi FEM-IPB 
 </div>
 </div>
 </div>
 
 </section>
-<section id="deri-siswara" class="slide level2">
-<h2>Deri Siswara</h2>
+<section id="a-little-about-me" class="slide level2">
+<h2>A little about me</h2>
 <div class="columns">
-<div class="column" style="width:44%;">
-<p>Adjunct Lecturer at <a href="https://fti.perbanas.id/home/">Perbanas Institute, <br>Dept of Data Science</a></p>
-<p><i class="fa-solid fa-link fa-xl" aria-label="link"></i> <a href="https://derisiswara.org/">derisiswara.org</a></p>
-<p><i class="fa-brands fa-linkedin fa-xl" aria-label="linkedin"></i> <a href="https://www.linkedin.com/in/derisiswara/">linkedin.com/in/derisiswara</a></p>
-<p><i class="fa-brands fa-github fa-xl" aria-label="github"></i> <a href="https://github.com/derisiswara/">derisiswara</a></p>
-<p><img data-src="images/altp2.jpeg" style="border-radius:1em;margin-top:auto"></p>
-</div><div class="column" style="width:28%;">
-<p><img data-src="images/Deri2.jpeg" style="border-radius:1em;margin-top:auto"></p>
-</div><div class="column" style="width:28%;">
-<div class="quarto-layout-panel" data-layout-nrow="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<p><img data-src="images/altp1.jpeg" style="border-radius:1em;margin-top:auto"></p>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<p><img data-src="images/lombok.jpeg" style="border-radius:1em;margin-top:auto"></p>
-</div>
-</div>
-</div>
-</div></div>
-</section>
-<section id="data-analysis-workflow" class="slide level2">
-<h2>Data Analysis Workflow</h2>
-<p>Workflow umum pada analisis data secara umum dimulai dari import data, merapikan data, transformasi data, visualisasi data, pemodelan, hingga diakhiri dengan <strong>komunikasi</strong> hasil analisis data.</p>
+<div class="column" style="width:45%;">
+<p><img data-src="images/deri.png" style="border-radius:1em;margin-top:auto" width="800"></p>
+<h3 id="deri-siswara">Deri Siswara</h3>
+</div><div class="column" style="width:5%;">
 
-<img data-src="https://r4ds.hadley.nz/diagrams/data-science/whole-game.png" class="r-stretch quarto-figure-center"><p class="caption">Sumber: https://r4ds.hadley.nz/</p></section>
-<section id="reproducibility" class="slide level2">
-<h2>Reproducibility</h2>
-<ul>
-<li><p>Riset yang baik adalah yang dapat direproduksi</p></li>
-<li><p>Reporoduksi manual memakan waktu dan rentan terhadap kesalahan</p></li>
-</ul>
-<p><img data-src="images/reproducibility.png" style="height:18em" alt="Reproducibility spectrum figure by Roger D. Peng (2011)"></p>
-</section>
-<section id="manual-updates" class="slide level2">
-<h2>Manual updates ❌</h2>
-
-<img data-src="images/manual-update.svg" class="quarto-figure quarto-figure-center r-stretch" alt="Illustration of a non-reproducible workflow for creating reports and presentations, highlighting the inefficiencies and error-prone nature of the copy/paste process."></section>
-<section id="updates-with-quarto" class="slide level2">
-<h2>Updates with Quarto ✅</h2>
-
-<img data-src="images/updates-with-quarto.svg" class="quarto-figure quarto-figure-center r-stretch" alt="Illustration of a reproducible workflow for creating reports and presentations with R and Quarto, showcasing the streamlined and efficient process."></section>
-<section>
-<section id="what-is-quarto" class="title-slide slide level1 section center">
-<h1>What is Quarto?</h1>
-
-</section>
-<section id="publishing-system-that-supports-multiple-languages-outputs" class="slide level2">
-<h2>Publishing system that supports multiple languages &amp; outputs</h2>
-<p><em>Open source tools</em> for scientific and technical publishing. Pengembangan Quarto disponsori oleh <strong>Posit</strong>, di mana sebelumnya terdapat hal serupa yaitu R Markdown, yang memiliki tujuan yang sama, tetapi ditargetkan khusus bahasa R.</p>
-
-<img data-src="images/horst-quarto-schematic.png" class="r-stretch quarto-figure-center"><p class="caption">Artwork from “Hello, Quarto” keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio::Conf(2022). Illustrated by Allison Horst.</p></section>
-<section id="r-markdown-vs-quarto" class="slide level2">
-<h2>R Markdown vs Quarto</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="images/rmarkdown.png" width="150"></p>
-<h3 id="r-markdown">R Markdown</h3>
-<ul>
-<li><p>Sistem penerbitan untuk ekosistem R</p></li>
-<li><p>Bergantung pada R</p></li>
-</ul>
 </div><div class="column" style="width:50%;">
-<p><img data-src="images/quarto.png" width="150"></p>
-<h3 id="quarto">Quarto</h3>
-<ul>
-<li><p>Command Line Interface (CLI)</p></li>
-<li><p>Memperluas ekosistem R Markdown</p></li>
-<li><p>Multi-bahasa dan multi-mesin</p></li>
-</ul>
-</div></div>
+<p>I take gigs as a research/data analyst. Experienced in survey design, creating dashboards, impact assessment, econometric modeling, and teaching.</p>
 <p><br></p>
-<p>R Markdown akan tetap dipertahankan tetapi kemungkinan tidak ada fitur baru <a href="https://yihui.org/en/2022/04/quarto-r-markdown/">(Xie 2022)</a>.</p>
-</section>
-<section id="create-all-kinds-of-outputs" class="slide level2">
-<h2>Create all kinds of outputs</h2>
-<ul>
-<li><a href="https://quarto.org/docs/output-formats/all-formats.html">Articles &amp; <strong>reports</strong></a></li>
-<li><a href="https://quarto.org/docs/manuscripts/">Manuscripts</a></li>
-<li><a href="https://quarto.org/docs/presentations/"><strong>Presentations</strong></a></li>
-<li><a href="https://quarto.org/docs/dashboards/">Dashboards</a></li>
-<li><a href="https://quarto.org/docs/websites/">Websites</a></li>
-<li><a href="https://quarto.org/docs/books/">Books</a></li>
-<li><a href="https://quarto.org/docs/interactive/">Interactive docs</a></li>
-</ul>
-<p>Get inspired by the <a href="https://quarto.org/docs/gallery/" data-preview-link="true">Quarto.org gallery</a> and the <a href="https://qmdclub.com/" data-preview-link="true">Qmd Club website &amp; blog showcase</a></p>
-</section></section>
-<section>
-<section id="anatomy-of-a-.qmd-file" class="title-slide slide level1 section center">
-<h1>Anatomy of a <code>.qmd</code> file</h1>
-
-</section>
-<section id="yaml-header" class="slide level2">
-<h2>1. YAML header</h2>
-<p>“Yet Another Markup Language” atau “YAML”</p>
-<div class="sourceCode" id="annotated-cell-1"><pre class="sourceCode numberSource yaml code-annotation-code number-lines code-with-copy"><code class="sourceCode yaml"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1"></a><span class="pp">---</span></span>
-<span id="annotated-cell-1-2"><a href="#annotated-cell-1-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Quarto demo</span></span>
-<span id="annotated-cell-1-3"><a href="#annotated-cell-1-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Deri Siswara</span></span>
-<span id="annotated-cell-1-4"><a href="#annotated-cell-1-4"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2025-05-11</span></span>
-<span id="annotated-cell-1-5"><a href="#annotated-cell-1-5"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="annotated-cell-1-6"><a href="#annotated-cell-1-6"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="annotated-cell-1-7"><a href="#annotated-cell-1-7"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> flatly</span></span>
-<span id="annotated-cell-1-8"><a href="#annotated-cell-1-8"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="annotated-cell-1-9"><a href="#annotated-cell-1-9"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol type="1">
-<li><p>Ditandai dengan tiga garis (<code>---</code>) di bagian atas dan bawah</p></li>
-<li><p>Metadata dokumen dan opsi tingkat dokumen menggunakan pasangan kunci-nilai dalam format <code>key: value</code></p></li>
-<li><p>Tambahkan 2 spasi untuk setiap tingkat indentasi – YAML sangat sensitif!</p></li>
-</ol>
-<p><br>
-</p>
-<p>See available options in the <strong>reference guides</strong>: <a href="https://quarto.org/docs/reference/formats/html.html">HTML</a>, <a href="https://quarto.org/docs/reference/formats/pdf.html">PDF</a>, <a href="https://quarto.org/docs/reference/formats/docx.html">MS Word</a>, <a href="https://quarto.org/docs/reference/formats/presentations/revealjs.html">Revealjs</a>, <a href="https://quarto.org/docs/reference/formats/presentations/pptx.html">MS Powerpoint</a>.</p>
-</section>
-<section id="narrative" class="slide level2">
-<h2>2. Narrative</h2>
-<p>Markdown syntax:</p>
-<ul>
-<li><p>Teks dengan format: <code>**tebal**</code> → <strong>tebal</strong></p></li>
-<li><p>Judul bagian: <code># Judul 1</code>, <code># Judul 2</code></p></li>
-<li><p>Hyperlink: <code>[google.com](https://google.com)</code> → <a href="https://google.com">google.com</a></p></li>
-<li><p>Gambar: <code>![](image.png)</code></p></li>
-<li><p>Kode inline: <code>`{r} Sys.Date()`</code> → <code>r Sys.Date()</code></p></li>
-<li><p>Matematika inline: <code>`$E = mc^{2}$`</code> → <span class="math inline">\(E = mc^{2}\)</span></p></li>
-</ul>
-<p><a href="https://quarto.org/docs/authoring/markdown-basics.html" data-preview-link="true"><strong>Guide to markdown syntax</strong></a></p>
-</section>
-<section id="code-chunks-or-cells-or-blocks" class="slide level2">
-<h2>3. Code chunks (or cells or blocks)</h2>
-<p><strong>Tiga cara untuk menyisipkan code chunk:</strong></p>
-<ol type="1">
-<li><p>Pintasan keyboard <code>Cmd</code>/<code>Ctrl</code> + <code>Option</code>/<code>Alt</code> + <code>I</code>.</p></li>
-<li><p><img data-src="images/rstudio-insert-chunk.png" style="vertical-align:middle;" alt="Tombol Insert Chunk di RStudio" width="49"> Tombol <strong>Insert Chunk</strong> di toolbar editor.</p></li>
-<li><p>Ketik manual pembatas chunk <code>```{r}</code> dan <code>```</code>.</p></li>
-</ol>
-<p><strong>Dua cara untuk menjalankan code chunk:</strong></p>
-<ol type="1">
-<li>Gunakan tombol <strong>Run Current Chunk</strong> atau <strong>Run All Chunks Above</strong>.</li>
-</ol>
-<p><img data-src="images/rstudio-code-chunk.png" alt="Code chunk di RStudio dengan tombol Run All Chunks Above dan Run Current Chunk disorot dan diberi label."></p>
-<ol start="2" type="1">
-<li>Jalankan code chunk saat ini dengan <code>Cmd</code>/<code>Ctrl</code> + <code>Shift</code> + <code>Enter</code>.</li>
-</ol>
-</section></section>
-<section>
-<section id="demo" class="title-slide slide level1 demo center">
-<h1>Demo</h1>
-<p><a href="https://github.com/derisiswara/belajarR-quarto/blob/main/demos/0-html-demo.qmd"><code>0-html-demo.qmd</code></a></p>
-</section>
-<section id="three-ways-to-render" class="slide level2">
-<h2>Three ways to render</h2>
-<ol type="1">
-<li><p><strong>RStudio/Quarto integration</strong>:</p>
-<p><img data-src="https://quarto.org/docs/get-started/hello/images/rstudio-render-button.png" style="vertical-align:middle;" alt="Quarto render button in RStudio" width="49"> <strong>Render</strong> button in RStudio or <code>Cmd</code>/<code>Ctrl</code> + <code>Shift</code> + <code>K</code> keyboard shortcut</p></li>
-<li><p>✨ <strong>Quarto R package</strong> ✨</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Console or R script</strong></pre>
-</div>
-<div class="sourceCode" id="cb1" data-filename="Console or R script"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>quarto<span class="sc">::</span><span class="fu">quarto_render</span>(</span>
-<span id="cb1-2"><a href=""></a>  <span class="at">input =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"latihan.qmd"</span>),   <span class="co"># Input Quarto file</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></li>
-<li><p><strong>Quarto CLI</strong></p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Terminal</strong></pre>
-</div>
-<div class="sourceCode" id="cb2" data-filename="Terminal"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href=""></a><span class="ex">quarto</span> render latihan.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></li>
-</ol>
-</section></section>
-<section>
-<section id="styling-with-html-and-css" class="title-slide slide level1 section center">
-<h1>Styling with HTML and CSS</h1>
-
-</section>
-<section id="html-format-uses-bootswatch-themes" class="slide level2">
-<h2>HTML format uses Bootswatch themes</h2>
-<p>Pilih atau sesuaikan salah satu dari 25 tema <a href="https://bootswatch.com/" data-preview-link="true">Bootswatch</a>.</p>
-<p><br>
-</p>
-<p><strong>Atur tema</strong> di YAML di bawah kunci <code>html</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href=""></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb3-2"><a href=""></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb3-3"><a href=""></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> solar</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br>
-</p>
-<p><strong>Sesuaikan tema</strong> dengan menyertakan file <code>.scss</code> kustom di bawah kunci <code>theme</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href=""></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb4-2"><a href=""></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb4-3"><a href=""></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">solar</span><span class="kw">,</span><span class="at"> theme.scss</span><span class="kw">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br>
-</p>
-<p><a href="https://quarto.org/docs/output-formats/html-themes.html">HTML theming Quarto docs</a></p>
-</section>
-<section id="revealjs-has-its-own-themes" class="slide level2">
-<h2>Revealjs has its own themes</h2>
-<p>Pratinjau tema di <a href="https://revealjs.com/themes/" data-preview-link="true">revealjs.com/themes</a>.</p>
-<p><br>
-</p>
-<p><strong>Atur tema</strong> di YAML di bawah kunci <code>revealjs</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href=""></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb5-2"><a href=""></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
-<span id="cb5-3"><a href=""></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> moon</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br>
-</p>
-<p><strong>Sesuaikan tema</strong> dengan menyertakan file <code>.scss</code> kustom di bawah kunci <code>theme</code>:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href=""></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb6-2"><a href=""></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
-<span id="cb6-3"><a href=""></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">moon</span><span class="kw">,</span><span class="at"> theme.scss</span><span class="kw">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br>
-</p>
-<p><a href="https://quarto.org/docs/presentations/revealjs/themes.html">Revealjs theming Quarto docs</a></p>
-</section>
-<section id="scss-files" class="slide level2">
-<h2>SCSS files</h2>
-<p>File SCSS memiliki bentuk sebagai berikut:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource scss number-lines code-with-copy"><code class="sourceCode scss"><span id="cb7-1"><a href=""></a><span class="co">/*-- scss:defaults --*/</span></span>
-<span id="cb7-2"><a href=""></a><span class="va">$h2-font-size</span>:          <span class="dv">1.6</span><span class="dt">rem</span> <span class="at">!default</span><span class="op">;</span></span>
-<span id="cb7-3"><a href=""></a><span class="va">$headings-font-weight</span>:  <span class="dv">500</span> <span class="at">!default</span><span class="op">;</span></span>
-<span id="cb7-4"><a href=""></a><span class="va">$body-color</span>:            <span class="va">$gray-700</span> <span class="at">!default</span><span class="op">;</span></span>
-<span id="cb7-5"><a href=""></a></span>
-<span id="cb7-6"><a href=""></a><span class="co">/*-- scss:rules --*/</span></span>
-<span id="cb7-7"><a href=""></a>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5<span class="op">,</span> h6 {</span>
-<span id="cb7-8"><a href=""></a>  <span class="kw">text-shadow</span>: <span class="op">-</span><span class="dv">1</span><span class="dt">px</span> <span class="op">-</span><span class="dv">1</span><span class="dt">px</span> <span class="dv">0</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">.3</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb7-9"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br>
-</p>
-<p>Definisikan <a href="https://quarto.org/docs/output-formats/html-themes.html#sass-variables"><strong>variabel SASS</strong></a> di bagian <code>defaults</code>.</p>
-<p>Deklarasikan <a href="https://www.w3schools.com/css/css_syntax.ASP"><strong>aturan CSS</strong></a> di bagian <code>rules</code>.</p>
-<p><br>
-</p>
-<p><a href="https://getbootstrap.com/docs/5.1/customize/sass/">Bootstrap docs</a></p>
-<p><a href="https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss">Default Bootstrap variables</a></p>
-<p><a href="https://emilhvitfeldt.com/blog">Emil Hvitfeldt’s Slidecraft 101 Series</a></p>
-</section></section>
-<section id="demo-slides-presentation-with-framework-revealjs" class="title-slide slide level1 demo center">
-<h1>Demo Slides (Presentation) with Framework Revealjs</h1>
-<p>This presentation is created using Quarto with the Revealjs framework. <a href="https://github.com/derisiswara/belajarR-quarto">github.com/derisiswara/belajarR-quarto</a></p>
-</section>
-
-<section id="demo-website" class="title-slide slide level1 demo center">
-<h1>Demo Website</h1>
-<p><a href="https://derisiswara.quarto.pub/komunitas-belajar-r/">Komunitas belajaR</a></p>
-<p><a href="https://derisiswara.org">Personal Web</a></p>
-<p><a href="https://derisiswara.quarto.pub/workshop-r/">Workshop Site</a></p>
-</section>
-
-<section>
-<section id="demo-dashboard" class="title-slide slide level1 demo center">
-<h1>Demo Dashboard</h1>
-<p><a href="https://github.com/derisiswara/dashboard-quarto-omnitest">github.com/derisiswara/dashboard-quarto-omnitest</a></p>
-<p><a href="https://01969522-1355-9b04-c2da-46e09a474dcd.share.connect.posit.cloud/">Dashboard Site</a></p>
-</section>
-<section id="thank-you" class="slide level2">
-<h2>Thank you!</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Slides</strong>:</p>
-<p><a href="https://derisiswara.quarto.pub/dasar-quarto/">derisiswara.quarto.pub/dasar-quarto/</a></p>
-<p><strong>Source code</strong>:</p>
-<p><a href="https://github.com/derisiswara/belajarR-quarto">github.com/derisiswara/belajarR-quarto</a></p>
-</div><div class="column" style="width:50%;">
-<p><strong>Let’s connect!</strong></p>
-<p><i class="fa-solid fa-link fa-xl" aria-label="link"></i> <a href="https://derisiswara.org/">derisiswara.org</a></p>
+<p><i class="fa-solid fa-briefcase fa-xl" aria-label="briefcase"></i> Adjunct Lecturer at <strong>Perbanas Institute, Dept of Data Science</strong></p>
+<p><i class="fa-solid fa-link fa-xl" aria-label="link"></i> <a href="https://derisiswara.art/">derisiswara.art</a></p>
 <p><i class="fa-brands fa-linkedin fa-xl" aria-label="linkedin"></i> <a href="https://www.linkedin.com/in/derisiswara/">linkedin.com/in/derisiswara</a></p>
-<p><i class="fa-brands fa-github fa-xl" aria-label="github"></i> <a href="https://github.com/derisiswara/">derisiswara</a></p>
+<p><i class="fa-brands fa-github fa-xl" aria-label="github"></i> <a href="https://github.com/derisiswara/">github.com/derisiswara</a></p>
 </div></div>
 </section>
-<section id="references" class="slide level2">
-<h2>References</h2>
-<ul>
-<li>Grolemund, G., &amp; Wickham, H. (2017). R for Data Science. O’Reilly Media.</li>
-<li>Most of the content in this presentation is adapted from <a href="https://jadeyryan.com/">jadeyryan</a></li>
-</ul>
+<section>
+<section id="apa-itu-machine-learning" class="title-slide slide level1 demo center">
+<h1>Apa itu <em>Machine Learning</em>?</h1>
 
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:25%;">
+<p><img data-src="images/s1.jpeg"></p>
+</div><div class="column" style="width:25%;">
+<p><img data-src="images/s2.jpeg"></p>
+</div><div class="column" style="width:25%;">
+<p><img data-src="images/s3.jpeg"></p>
+</div><div class="column" style="width:25%;">
+<p><img data-src="images/s4.jpeg"></p>
+</div></div>
 </section></section>
+<section>
+<section id="apalagi-contoh-produk-machine-learning-yang-sering-kita-gunakan-sehari-hari" class="title-slide slide level1 center">
+<h1>Apalagi contoh produk <em>machine learning</em> yang sering kita gunakan sehari-hari?</h1>
+
+</section>
+<section id="produk-machine-learning-sehari-hari" class="slide level2">
+<h2>Produk Machine Learning Sehari-hari</h2>
+<ul>
+<li><strong>📱 Smartphone</strong>: face unlock, autocorrect, email spam filter</li>
+<li><strong>🌐 Sosial Media</strong>: feed rekomendasi, teman disarankan, trending topic</li>
+<li><strong>🛒 E-commerce &amp; Finansial</strong>: rekomendasi produk, harga dinamis, deteksi fraud, chatbot</li>
+<li><strong>🚗 Transportasi</strong>: Google Maps ETA (Estimated Time of Arrival), driver matching, mobil autopilot</li>
+<li><strong>🎵 Hiburan &amp; Produktivitas</strong>: Netflix/Spotify, Google Translate, Grammarly</li>
+</ul>
+</section></section>
+<section>
+<section id="jadi-apa-definisi-machine-learning" class="title-slide slide level1 demo center">
+<h1>Jadi apa definisi <em>Machine Learning</em>?</h1>
+
+</section>
+<section id="definisi-machine-learning" class="slide level2">
+<h2>Definisi Machine Learning</h2>
+
+<img data-src="https://i.vas3k.ru/7vw.jpg" class="r-stretch"><p><em>Machine Learning</em> adalah cabang dari kecerdasan buatan (AI) yang berfokus pada pengembangan algoritma dan model statistik yang memungkinkan komputer untuk belajar dari data dan membuat prediksi atau keputusan tanpa perlu diprogram secara eksplisit.</p>
+</section>
+<section id="klasifikasi" class="slide level2">
+<h2>Klasifikasi</h2>
+
+<img data-src="images/def3.png" class="r-stretch"></section>
+<section id="traditional-programming" class="slide level2">
+<h2>Traditional Programming</h2>
+
+<img data-src="images/def2.png" class="r-stretch"></section>
+<section id="machine-learning-ml" class="slide level2">
+<h2>Machine Learning (ML)</h2>
+
+<img data-src="images/def1.png" class="r-stretch"></section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+
+<img data-src="https://info5940.infosci.cornell.edu/slides/machine-learning/images/intro.003.jpeg" class="r-stretch"></section>
+<section id="machine-learning-di-data-science" class="slide level2">
+<h2>Machine Learning di Data Science</h2>
+
+<img data-src="https://miro.medium.com/v2/format:webp/1*mgXvzNcwfpnBawI6XTkVRg.png" class="center r-stretch"></section>
+<section id="machine-learning-workflow" class="slide level2 smaller">
+<h2>Machine Learning Workflow</h2>
+
+<img data-src="https://ml-ops.org/img/ml-engineering.jpg" class="r-stretch"></section></section>
+<section id="why-is-ml-important" class="title-slide slide level1 demo center">
+<h1>Why is ML important?</h1>
+
+</section>
+
+<section>
+<section id="machine-learning-itu-penting-karena" class="title-slide slide level1 center">
+<h1>Machine Learning itu Penting karena…</h1>
+<ul>
+<li class="fragment">Ide tugas akhir (a.k.a. skripsi)</li>
+</ul>
+</section>
+<section id="scope-ml-di-universitas" class="slide level2">
+<h2>Scope ML di Universitas</h2>
+<h4 id="predictive-vs-explanatory">Predictive vs Explanatory</h4>
+
+<img data-src="images/fake.png" class="r-stretch"></section>
+<section id="scope-ml-di-universitas-1" class="slide level2">
+<h2>Scope ML di Universitas</h2>
+<h4 id="predictive-vs-explanatory-1">Predictive vs Explanatory</h4>
+<p><img data-src="images/pred.png" width="1000"> <a href="https://repository.ipb.ac.id/handle/123456789/158240">Baca</a> <img data-src="images/exp.png" width="1000"> <a href="https://repository.ipb.ac.id/handle/123456789/111961">Baca</a></p>
+</section></section>
+<section>
+<section id="olah-data-dengan-metode-machine-learning" class="title-slide slide level1 demo center">
+<h1>Olah Data dengan Metode <em>Machine Learning</em></h1>
+
+</section>
+<section id="r-python-stata-dll" class="slide level2">
+<h2>R, Python, STATA, dll</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><img data-src="images/software.jpeg"></p>
+</div><div class="column" style="width:45%;">
+<ul>
+<li><a href="https://derisiswara.art/simpleml/">Machine Learning dengan R dan Python</a> <br> <br></li>
+<li><a href="https://derisiswara.art/blog/2025_08_08_stata_h2o/">Machine Learning dengan STATA</a></li>
+</ul>
+</div></div>
+</section>
+<section id="powering-a-dashboard-with-llms" class="slide level2">
+<h2>Powering a Dashboard with LLMs</h2>
+<iframe data-external="1" src="https://www.youtube.com/embed/xbS8nNZYB5A" width="100%" height="80%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</section></section>
+<section>
+<section id="kenapa-terkadang-regresiekonometrika-tidak-cukup" class="title-slide slide level1 demo center">
+<h1>Kenapa terkadang regresi/ekonometrika tidak cukup?</h1>
+
+</section>
+<section id="non-linieritas-dan-besar-data" class="slide level2">
+<h2>Non-Linieritas dan Besar Data</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><img data-src="https://bradleyboehmke.github.io/HOML/06b-mars_files/figure-html/nonlinear-comparisons-1.png"></p>
+</div><div class="column" style="width:45%;">
+<p><img data-src="https://derisiswara.quarto.pub/ml_w1/img/c6.png"></p>
+</div></div>
+<p>Interpretasi dalam model regresi mengharuskan asumsi linearitas, yang mungkin tidak selalu sesuai dengan hubungan kompleks dalam data dunia nyata. Model non-linier berbasis ML, misalnya decision tree dapat menjadi alternatif yang lebih baik. Juga, semakin besar data atau semakin kompleks hubungan antar variabel, performa model ML cenderung lebih unggul dibandingkan regresi tradisional.</p>
+</section></section>
+<section>
+<section id="mari-bermain" class="title-slide slide level1 demo center">
+<h1>Mari Bermain !</h1>
+<p><a href="https://teachablemachine.withgoogle.com/models/S4HbsLYJr/">Coba Buka</a></p>
+<p><a href="https://teachablemachine.withgoogle.com/train/">Buat Model ML Yuk</a></p>
+</section>
+<section id="submit-tugas" class="slide level2">
+<h2>Submit Tugas</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<ul>
+<li><ol type="1">
+<li>Buat model ML versimu sendiri di <a href="https://teachablemachine.withgoogle.com/train/">teachablemachine.withgoogle.com/train</a> dan submit!</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Cari model Terbaik! <a href="https://colab.research.google.com/drive/1YpV2srdBqaaSG31dRtHLKxH_ebdzFwf9?usp=sharing">Kerjakan</a></li>
+</ol>
+<ul>
+<li>Save as notebook di Google Drive kamu</li>
+<li>Run semua cell</li>
+<li>Cari predictor yang menghasilkan akurasi terbaik</li>
+<li>Submit link notebook kamu</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
+<iframe aria-label="Submit Tugas ML" frameborder="0" style="height:500px;width:99%;border:none;" src="https://forms.zohopublic.com/derisiswara/form/SubmitTugasML/formperma/6uan1KT-IaZPK-k6jqpncLVaYxSM6-3fH0uVbMr6Ekk">
+</iframe>
+</div></div>
+</section></section>
+<section id="terima-kasih" class="title-slide slide level1 center">
+<h1>Terima Kasih</h1>
+<p><a href="https://derisiswara.art/machinelearning-perbanas/">Slides and materials for the Machine Learning course</a></p>
+
+<script> window._input_file = "---\n" + "title: \"Aplikasi Machine Learning\"\n" + "author: \"Deri Siswara // 29 Agustus 2025<br><br>Mata Kuliah Perencaan Proyek Ekonomi<br>Departemen Ilmu Ekonomi FEM-IPB\"\n" + "execute: \n" + "  echo: true\n" + "format:\n" + "  revealjs:\n" + "    chalkboard: \n" + "      buttons: true\n" + "    footer: \"[derisiswara.art/kuliah_ml](https://derisiswara.art/kuliah_ml/#/title-slide)\"\n" + "#    logo: \"images/logoR.png\"\n" + "    width: 1600\n" + "    height: 900\n" + "    theme: slides.scss\n" + "    highlight-style: a11y\n" + "    transition: fade\n" + "    incremental: true\n" + "    slide-number: true\n" + "    pdf-separate-fragments: true\n" + "revealjs-plugins:\n" + "  - pointer\n" + "  - editable\n" + "filters:\n" + "  - editable\n" + "---\n" + "\n" + "## A little about me\n" + "\n" + "::: columns\n" + "::: {.column width=\"45%\"}\n" + "\n" + "![](images/deri.png){width=800px style=\"border-radius:1em;margin-top:auto\"}\n" + "\n" + "### Deri Siswara\n" + "\n" + ":::\n" + "\n" + "::: {.column width=\"5%\"}\n" + "\n" + ":::\n" + "\n" + "::: {.column width=\"50%\"}\n" + "\n" + "I take gigs as a research/data analyst. Experienced in survey design, creating dashboards, impact assessment, econometric modeling, and teaching.\n" + "\n" + "<br>\n" + "\n" + "   Adjunct Lecturer at **Perbanas Institute, Dept of Data Science**\n" + "\n" + "   [derisiswara.art](https://derisiswara.art/)\n" + "\n" + "   [linkedin.com/in/derisiswara](https://www.linkedin.com/in/derisiswara/)\n" + "\n" + " [github.com/derisiswara](https://github.com/derisiswara/)\n" + ":::\n" + ":::\n" + "\n" + "# Apa itu *Machine Learning*? {.demo}\n" + "\n" + "##\n" + "::: columns\n" + "::: {.column width=\"25%\"}\n" + "![](images/s1.jpeg)\n" + ":::\n" + "::: {.column width=\"25%\"}\n" + "![](images/s2.jpeg)\n" + ":::\n" + "::: {.column width=\"25%\"}\n" + "![](images/s3.jpeg)\n" + ":::\n" + "::: {.column width=\"25%\"}\n" + "![](images/s4.jpeg)\n" + ":::\n" + ":::\n" + "\n" + "# Apalagi contoh produk *machine learning* yang sering kita gunakan sehari-hari? \n" + "\n" + "## Produk Machine Learning Sehari-hari\n" + "\n" + "::: {.nonincremental}\n" + "* **📱 Smartphone**: face unlock, autocorrect, email spam filter\n" + "* **🌐 Sosial Media**: feed rekomendasi, teman disarankan, trending topic\n" + "* **🛒 E-commerce & Finansial**: rekomendasi produk, harga dinamis, deteksi fraud, chatbot\n" + "* **🚗 Transportasi**: Google Maps ETA (Estimated Time of Arrival), driver matching, mobil autopilot\n" + "* **🎵 Hiburan & Produktivitas**: Netflix/Spotify, Google Translate, Grammarly\n" + ":::\n" + "# Jadi apa definisi *Machine Learning*? {.demo}\n" + "\n" + "## Definisi Machine Learning\n" + "\n" + "![](https://i.vas3k.ru/7vw.jpg)\n" + "\n" + "*Machine Learning* adalah cabang dari kecerdasan buatan (AI) yang berfokus pada pengembangan algoritma dan model statistik yang memungkinkan komputer untuk belajar dari data dan membuat prediksi atau keputusan tanpa perlu diprogram secara eksplisit.\n" + "\n" + "## Klasifikasi\n" + "\n" + "![](images/def3.png)\n" + "\n" + "## Traditional Programming\n" + "\n" + "![](images/def2.png)\n" + "\n" + "## Machine Learning (ML)\n" + "\n" + "![](images/def1.png)\n" + "\n" + "## \n" + "\n" + "![](https://info5940.infosci.cornell.edu/slides/machine-learning/images/intro.003.jpeg)\n" + "\n" + "## Machine Learning di Data Science\n" + "\n" + "![](https://miro.medium.com/v2/format:webp/1*mgXvzNcwfpnBawI6XTkVRg.png){.center}\n" + "\n" + "## Machine Learning Workflow {.smaller}\n" + "![](https://ml-ops.org/img/ml-engineering.jpg)\n" + "\n" + "# Why is ML important? {.demo}\n" + "\n" + "# Machine Learning itu Penting karena...\n" + "\n" + "::: {.incremental}\n" + "* Ide tugas akhir (a.k.a. skripsi)\n" + ":::\n" + "\n" + "## Scope ML di Universitas\n" + "####  Predictive vs Explanatory\n" + "\n" + "![](images/fake.png)\n" + "\n" + "## Scope ML di Universitas\n" + "####  Predictive vs Explanatory\n" + "![](images/pred.png){width=1000px}\n" + "[Baca](https://repository.ipb.ac.id/handle/123456789/158240)\n" + "![](images/exp.png){width=1000px}\n" + "[Baca](https://repository.ipb.ac.id/handle/123456789/111961)\n" + "\n" + "# Olah Data dengan Metode *Machine Learning* {.demo}\n" + "\n" + "## R, Python, STATA, dll\n" + "\n" + "::: columns\n" + "::: {.column width=\"45%\"}\n" + "\n" + "![](images/software.jpeg)\n" + ":::\n" + "\n" + "::: {.column width=\"45%\"}\n" + "::: {.nonincremental}\n" + "* [Machine Learning dengan R dan Python](https://derisiswara.art/simpleml/)\n" + "<br>\n" + "<br>\n" + "* [Machine Learning dengan STATA](https://derisiswara.art/blog/2025_08_08_stata_h2o/)\n" + ":::\n" + ":::\n" + ":::\n" + "## Powering a Dashboard with LLMs\n" + "\n" + "\n" + "\n" + "# Kenapa terkadang regresi/ekonometrika tidak cukup? {.demo}\n" + "\n" + "## Non-Linieritas dan Besar Data\n" + "::: columns\n" + "::: {.column width=\"45%\"}\n" + "![](https://bradleyboehmke.github.io/HOML/06b-mars_files/figure-html/nonlinear-comparisons-1.png)\n" + ":::\n" + "::: {.column width=\"45%\"}\n" + "![](https://derisiswara.quarto.pub/ml_w1/img/c6.png)\n" + ":::\n" + ":::\n" + "\n" + "Interpretasi dalam model regresi mengharuskan asumsi linearitas, yang mungkin tidak selalu sesuai dengan hubungan kompleks dalam data dunia nyata. Model non-linier berbasis ML, misalnya decision tree dapat menjadi alternatif yang lebih baik. Juga, semakin besar data atau semakin kompleks hubungan antar variabel, performa model ML cenderung lebih unggul dibandingkan regresi tradisional.\n" + "\n" + "# Mari Bermain ! {.demo}\n" + "\n" + "[Coba Buka](https://teachablemachine.withgoogle.com/models/S4HbsLYJr/)\n" + "\n" + "[Buat Model ML Yuk](https://teachablemachine.withgoogle.com/train/)\n" + "\n" + "## Submit Tugas\n" + "::: columns\n" + "::: {.column width=\"45%\"}\n" + "::: {.nonincremental}\n" + "\n" + "* 1. Buat model ML versimu sendiri di [teachablemachine.withgoogle.com/train](https://teachablemachine.withgoogle.com/train/) dan submit!\n" + "\n" + "* 2. Cari model Terbaik! [Kerjakan](https://colab.research.google.com/drive/1YpV2srdBqaaSG31dRtHLKxH_ebdzFwf9?usp=sharing)\n" + "\n" + "  * Save as notebook di Google Drive kamu\n" + "  * Run semua cell\n" + "  * Cari predictor yang menghasilkan akurasi terbaik\n" + "  * Submit link notebook kamu\n" + "\n" + ":::\n" + ":::\n" + "::: {.column width=\"10%\"}\n" + ":::\n" + "::: {.column width=\"45%\"}\n" + "<iframe aria-label='Submit Tugas ML' frameborder=\"0\" style=\"height:500px;width:99%;border:none;\" src='https://forms.zohopublic.com/derisiswara/form/SubmitTugasML/formperma/6uan1KT-IaZPK-k6jqpncLVaYxSM6-3fH0uVbMr6Ekk'></iframe>\n" + ":::\n" + ":::\n" + "\n" + "# Terima Kasih\n" + "[Slides and materials for the Machine Learning course](https://derisiswara.art/machinelearning-perbanas/)"</script>
+<script> window._input_filename = 'D:\Dokumentasi\kuliah_ml\index.qmd'</script>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="images/logoR.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://derisiswara.org/">derisiswara.org</a></p>
+<p><a href="https://derisiswara.art/kuliah_ml/#/title-slide">derisiswara.art/kuliah_ml</a></p>
 </div>
 </div></div>
 
@@ -503,7 +337,9 @@ Deri Siswara // Mei 11, 2025<br>Komunitas belajaR
   <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="index_files/libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="index_files/libs/revealjs/plugin/revealeditable/editable.js"></script>
   <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -525,7 +361,8 @@ Deri Siswara // Mei 11, 2025<br>Komunitas belajaR
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
 'pointer': {"key":"q","color":"red","pointerSize":16,"alwaysVisible":false},
 'smaller': false,
  
@@ -697,7 +534,7 @@ Deri Siswara // Mei 11, 2025<br>Komunitas belajaR
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealPointer, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, Revealeditable, QuartoSupport,
 
           RevealMath,
           RevealNotes,
