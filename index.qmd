@@ -92,7 +92,7 @@ I take gigs as a research/data analyst. Experienced in survey design, creating d
 
 *Machine Learning* adalah cabang dari kecerdasan buatan (AI) yang berfokus pada pengembangan algoritma dan model statistik yang memungkinkan komputer untuk belajar dari data dan membuat prediksi atau keputusan tanpa perlu diprogram secara eksplisit.
 
-## Klasifikasi
+## Apakah mesin bisa belajar?
 
 ![](images/def3.png)
 
